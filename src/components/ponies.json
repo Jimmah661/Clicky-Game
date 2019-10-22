@@ -1,0 +1,62 @@
+[
+  {
+    "name": "ab",
+    "img": "/assets/images/ab.jpg",
+    "clicked": false
+  },
+  {
+    "name": "aj",
+    "img": "/assets/images/aj.jpg",
+    "clicked": false
+  },
+  {
+    "name": "dh",
+    "img": "/assets/images/dh.jpg",
+    "clicked": false
+  },
+  {
+    "name": "fs",
+    "img": "/assets/images/fs.jpg",
+    "clicked": false
+  },
+  {
+    "name": "pp",
+    "img": "/assets/images/pp.jpg",
+    "clicked": false
+  },
+  {
+    "name": "r",
+    "img": "/assets/images/r.jpg",
+    "clicked": false
+  },
+  {
+    "name": "rbd",
+    "img": "/assets/images/rbd.jpg",
+    "clicked": false
+  },
+  {
+    "name": "s",
+    "img": "/assets/images/s.jpg",
+    "clicked": false
+  },
+  {
+    "name": "sb",
+    "img": "/assets/images/sb.jpg",
+    "clicked": false
+  },
+  {
+    "name": "sl",
+    "img": "/assets/images/sl.jpg",
+    "clicked": false
+  },
+  {
+    "name": "tl",
+    "img": "/assets/images/tl.jpg",
+    "clicked": false
+  },
+  {
+    "name": "ts",
+    "img": "/assets/images/ts.jpg",
+    "clicked": false
+  }
+]

@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   updateScore = event => {
-    // event.preventDefault();
+    // Set the current state to the previous state +1
     this.setState(prevState => {
       return { currentScore: prevState.currentScore + 1 };
     });
