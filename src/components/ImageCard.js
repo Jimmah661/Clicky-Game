@@ -1,26 +1,49 @@
 import React from "react";
 import "./ImageCard.css";
 
-function ImageCard(props) {
-  console.log(props);
-  var result = [];
-  for (let i = 0; i < props.ponies.length; i++) {
-    let cardStyle = {
-      backgroundImage: "url('" + props.ponies[i].img + "')"
-    };
-    result.push(
-      <div
-        className="clicker"
-        style={cardStyle}
-        key={props.ponies[i].name}
-        onClick={() =>
-          props.clickEvent(props.ponies[i].name, props.ponies[i].clicked)
-        }
-      ></div>
-    );
-  }
+class ImageCard extends React.Component {
+  shuffle = array => {
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
 
-  return result;
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+  };
+
+  render() {
+    var ponyList = this.shuffle(this.props.ponies);
+    console.log(ponyList);
+    var result = [];
+    for (let i = 0; i < ponyList.length; i++) {
+      let cardStyle = {
+        backgroundImage: "url('" + ponyList[i].img + "')"
+      };
+      result.push(
+        <div
+          className="clicker"
+          style={cardStyle}
+          key={ponyList[i].name}
+          onClick={() =>
+            this.props.clickEvent(ponyList[i].name, ponyList[i].clicked)
+          }
+        ></div>
+      );
+    }
+
+    return result;
+  }
 }
 
 export default ImageCard;

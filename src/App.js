@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header currentScore={this.state.currentScore} />
+        <Header score={this.state} />
         <Body
           currentScore={this.state.currentScore}
           updateScore={this.updateScore}
@@ -24,11 +24,20 @@ class App extends React.Component {
   }
 
   updateScore = event => {
-    // Set the current state to the previous state +1
-    this.setState(prevState => {
-      return { currentScore: prevState.currentScore + 1 };
-    });
+    // if the currentScore is equal to the topScore then run the updateTopScore method too
+    if (this.state.currentScore === this.state.topScore) {
+      this.setState(prevState => {
+        return {
+          currentScore: prevState.currentScore + 1,
+          topScore: prevState.topScore + 1
+        };
+      });
+    } else {
+      this.setState(prevState => {
+        return { currentScore: prevState.currentScore + 1 };
+      });
+    }
+    // Set the current state currentScore to the previous state currentScore +1
   };
 }
-
 export default App;

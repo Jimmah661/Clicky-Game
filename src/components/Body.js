@@ -8,17 +8,6 @@ class Body extends React.Component {
     ponies: ponies
   };
 
-  render() {
-    return (
-      <div>
-        <p>Click the Ponies to earn points, Don't click the same </p>
-        <div className="clickerContainer clearfix">
-          <ImageCard ponies={this.state.ponies} clickEvent={this.clickEvent} />
-        </div>
-      </div>
-    );
-  }
-
   clickEvent = (pony, clicked) => {
     console.log(pony, clicked);
     // Pass current state of ponies into a temporary variable
@@ -41,6 +30,17 @@ class Body extends React.Component {
     // Update the current state with the new state of the ponies
     this.setState({ ponies: newPonies });
   };
+
+  render() {
+    return (
+      <div>
+        <p>Click the Ponies to earn points, Don't click the same </p>
+        <div className="clickerContainer clearfix">
+          <ImageCard ponies={this.state.ponies} clickEvent={this.clickEvent} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Body;
