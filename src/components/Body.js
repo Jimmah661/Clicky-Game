@@ -25,6 +25,12 @@ class Body extends React.Component {
       // if it hits the current pony name but it HAS been clicked before then run this
       else if (newPonies[i].name === pony && newPonies[i].clicked === true) {
         console.log("Already Clicked");
+        newPonies.forEach(element => {
+          element.clicked = false;
+          return element;
+        });
+        // Reset the current score to 0, leaves the topScore alone
+        this.props.resetScore();
       }
     }
     // Update the current state with the new state of the ponies
