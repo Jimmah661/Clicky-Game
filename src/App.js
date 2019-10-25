@@ -10,8 +10,9 @@ class App extends React.Component {
     topScore: 0
   };
 
-  updateScore = event => {
-    // if the currentScore is equal to the topScore then run the updateTopScore method too
+  // Function will manage the updating of scores in the Current State
+  updateScore = () => {
+    // if the currentScore is equal to the topScore then update the topScore too
     if (this.state.currentScore === this.state.topScore) {
       this.setState(prevState => {
         return {
@@ -19,6 +20,7 @@ class App extends React.Component {
           topScore: prevState.topScore + 1
         };
       });
+      // Else only update the currenScore
     } else {
       this.setState(prevState => {
         return { currentScore: prevState.currentScore + 1 };
@@ -27,7 +29,9 @@ class App extends React.Component {
     // Set the current state currentScore to the previous state currentScore +1
   };
 
+  // Will handle he reset on the event of a user making a mistake
   resetScore = () => {
+    // Sets the current state Score to 0
     this.setState({ currentScore: 0 });
   };
 

@@ -8,15 +8,15 @@ class Body extends React.Component {
     ponies: ponies
   };
 
+  // Function passed to each ImageCard, this will handle the logic of what happens when you click on one of the cards
+  // Handles differently if the cards clicked state is either True or False
   clickEvent = (pony, clicked) => {
-    console.log(pony, clicked);
     // Pass current state of ponies into a temporary variable
     var newPonies = this.state.ponies;
     // Run through the array of Ponies
     for (var i in newPonies) {
       // When it hits the current pony name and it hasn't been clicked before run this
       if (newPonies[i].name === pony && newPonies[i].clicked === false) {
-        console.log("Not Clicked");
         // Set the clicked value to true
         newPonies[i].clicked = true;
         // Update the score by 1
@@ -24,7 +24,8 @@ class Body extends React.Component {
       }
       // if it hits the current pony name but it HAS been clicked before then run this
       else if (newPonies[i].name === pony && newPonies[i].clicked === true) {
-        console.log("Already Clicked");
+        // run through the array and reset every clicked state to false
+        // See if you can find a better way to do this.
         newPonies.forEach(element => {
           element.clicked = false;
           return element;
