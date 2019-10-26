@@ -1,7 +1,6 @@
 import React from "react";
 import ImageCard from "./ImageCard";
 import ponies from "./ponies.json";
-import "./Body.css";
 
 class Body extends React.Component {
   state = {
@@ -41,7 +40,10 @@ class Body extends React.Component {
   render() {
     return (
       <div>
-        <p>Click the Ponies to earn points, Don't click the same </p>
+        <p>
+          Click the Ponies to earn points, Don't click the same pony more than
+          once
+        </p>
         <div className="clickerContainer row clearfix">
           <ImageCard ponies={this.state.ponies} clickEvent={this.clickEvent} />
         </div>
