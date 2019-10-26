@@ -42,7 +42,7 @@ class Body extends React.Component {
     return (
       <div>
         <p>Click the Ponies to earn points, Don't click the same </p>
-        <div className="clickerContainer clearfix">
+        <div className="clickerContainer row clearfix">
           <ImageCard ponies={this.state.ponies} clickEvent={this.clickEvent} />
         </div>
       </div>
